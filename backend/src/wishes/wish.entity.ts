@@ -25,11 +25,20 @@ export class Wish {
   @Column({ length: 250 })
   @MinLength(1)
   @MaxLength(250)
-  nume: string;
+  name: string;
+
+  @Column()
+  @IsUrl()
+  link: string;
 
   @Column()
   @IsUrl()
   image: string;
+
+  @Column('decimal', { precision: 10, scale: 2 })
+  @IsNumber()
+  @IsDecimal({ decimal_digits: '2' })
+  price: number;
 
   @Column('decimal', { precision: 10, scale: 2 })
   @IsNumber()

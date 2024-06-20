@@ -1,0 +1,58 @@
+version: '3.9'
+
+services:
+  backend:
+    container_name: backend
+    build:
+      context: backend
+      dockerfile: Dockerfile
+    image: backend
+    env_file:
+      - .env
+    restart: always
+    ports:
+      - "4000:3000"
+    networks:
+      - backend
+    # depends_on:
+    #   - postgres
+
+  frontend:
+    container_name: frontend
+    build:
+      context: frontend
+      dockerfile: Dockerfile
+    image: frontend
+    restart: always
+    ports:
+      - "8080:80"
+    networks:
+      - frontend
+
+  postgres:
+    container_name: postgres
+    image: postgres
+    restart: always
+    env_file:
+      - .env
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/data/postgres
+    networks:
+      - backend
+
+  adminer:
+    container_name: adminer
+    image: adminer
+    ports:
+      - 8081:8080
+    networks:
+      - backend
+
+volumes:
+  postgres_data:
+
+networks:
+  frontend:
+  backend:
