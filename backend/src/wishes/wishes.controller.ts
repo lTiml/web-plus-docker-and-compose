@@ -54,8 +54,8 @@ export class WishesController {
 
   @UseGuards(JwtAuthGuard)
   @Patch(':id')
-  update(@Request(){ user }:IUserRequest, @Param('id') id: number, @Body() updateWishDto: UpdateWishDto): Promise<Wish> {
-    return this.wishService.update(id, updateWishDto, user.id);
+  update(@Param('id') id: number, @Body() updateWishDto: UpdateWishDto) {
+    return this.wishService.update(id, updateWishDto);
   }
 
   @UseGuards(JwtAuthGuard)

@@ -49,18 +49,18 @@ export class WishesService {
     });
   }
 
-  async update(wishId: number, updateWishDto: UpdateWishDto, userId: number): Promise<Wish> {
+  async update(wishId: number, updateWishDto: UpdateWishDto) {
     const wish = await this.findOne(wishId);
     if (!wish) {
       throw new NotFoundException('Такого подарка не существует');
     }
-    // if (updateWishDto.price && wish.offers.length > 0) {
-    //   throw new BadRequestException('Невозможно редактировать');
-		// }
-		if (wish.owner.id !== userId)
-			throw new BadRequestException('Вы не можете редактировать чужие подарки')
+    if (updateWishDto.price && wish.offers.length > 0) {
+      throw new BadRequestException('Невозможно редактировать');
+		}
+		// if (wish.owner.id !== userId)
+		// 	throw new BadRequestException('Вы не можете редактировать чужие подарки')
 		
-    return await this.wishRepository.update(wishId, updateWishDto, userId);
+    return await this.wishRepository.update(wishId, updateWishDto);
   }
 
   async deleteOne(wishId: number, userId: number): Promise<Wish> {
