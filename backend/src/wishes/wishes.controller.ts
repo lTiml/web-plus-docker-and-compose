@@ -32,7 +32,7 @@ export class WishesController {
 
   @Get('last')
   findLast(): Promise<Wish[]> {
-    return this.wishService.findLast(5)[0];
+    return this.wishService.findLast(5);
   }
 
   @Get('top')

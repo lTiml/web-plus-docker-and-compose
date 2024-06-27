@@ -13,6 +13,7 @@ import { WishlistsModule } from './wishlist/wishlists.module';
 import { AuthModule } from './auth/auth.module';
 import { HashModule } from './hash/hash.module';
 import { AppService } from './app.service';
+import { OffersModule } from './offers/offers.module';
 require('dotenv').config();
 
 @Module({
@@ -37,6 +38,7 @@ require('dotenv').config();
     WishlistsModule,
     AuthModule,
     HashModule,
+		OffersModule
   ],
   controllers: [AppController],
   providers: [AppService],

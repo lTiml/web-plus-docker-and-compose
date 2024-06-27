@@ -40,9 +40,8 @@ export class Wish {
   @IsDecimal({ decimal_digits: '2' })
   price: number;
 
-  @Column('decimal', { precision: 10, scale: 2 })
+  @Column({ default: 0 })
   @IsNumber()
-  @IsDecimal({ decimal_digits: '2' })
   raised: number;
 
   @ManyToOne(() => User, (user) => user.wishes)

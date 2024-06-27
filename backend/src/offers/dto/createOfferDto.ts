@@ -10,5 +10,5 @@ export class CreateOfferDto {
 
   @IsBoolean()
   @IsOptional()
-  public hidden = false;
+  public hidden: boolean = false;
 }

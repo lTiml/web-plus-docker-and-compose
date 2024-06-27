@@ -19,7 +19,7 @@ export class CreateWishlistDto {
   @IsOptional()
   @IsString()
   @MaxLength(1500)
-  description = '';
+  description: string = '';
 
   @IsArray()
   @IsNumber({}, { each: true })
