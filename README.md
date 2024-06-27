@@ -3,5 +3,5 @@
 Перед тем как приступить к выполнению проектной работы разместите в репозитории исходный код фронтенд и бэкенд частей сервиса КупиПодариДай, реализованного вами ранее. 
 
 IP: 158.160.47.224  
-Frontend: https://timkpd.nomorepartiesco.ru  
-Backend: https://api.timkpd.nomorepartiesco.ru  
+Frontend: https://timkupid.nomorepartiesco.ru  
+Backend: https://api.timkupid.nomorepartiesco.ru  
