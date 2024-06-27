@@ -1,5 +1,5 @@
 // export const URL = "http://localhost:4000";
-export const URL = "https://api.timkupipodari.nomorepartiesco.ru";
+export const URL = "https://api.timkpd.nomorepartiesco.ru";
 
 export const MINIMUM_PASSWORD_LENGTH = 3;
 export const MINIMUM_USERNAME_LENGTH = 3;
